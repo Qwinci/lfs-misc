@@ -1,0 +1,20 @@
+--- configure	2022-05-31 19:46:20.257772568 +0000
++++ configure_new	2022-05-31 19:48:39.417671382 +0000
+@@ -6233,11 +6233,12 @@
+   return 0;
+ }
+ _ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_curses_tgetent=yes
+-else
+-  ac_cv_lib_curses_tgetent=no
+-fi
++#if ac_fn_c_try_link "$LINENO"; then :
++#  ac_cv_lib_curses_tgetent=yes
++#else
++#  ac_cv_lib_curses_tgetent=no
++#fi
++ac_cv_lib_curses_tgetenv=yes
+ 
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
