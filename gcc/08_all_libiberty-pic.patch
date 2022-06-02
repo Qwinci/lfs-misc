@@ -1,0 +1,16 @@
+diff --git a/13.1.0/gentoo/08_all_libiberty-pic.patch b/13.1.0/gentoo/08_all_libiberty-pic.patch
+new file mode 100644
+index 0000000..3f0bae1
+--- /dev/null
++++ b/13.1.0/gentoo/08_all_libiberty-pic.patch
+@@ -0,0 +1,10 @@
++--- a/libiberty/Makefile.in
+++++ b/libiberty/Makefile.in
++@@ -265,6 +265,7 @@ $(TARGETLIB): $(REQUIRED_OFILES) $(EXTRA_OFILES) $(LIBOBJS)
++ 	  $(AR) $(AR_FLAGS) $(TARGETLIB) \
++ 	    $(REQUIRED_OFILES) $(EXTRA_OFILES) $(LIBOBJS); \
++ 	  $(RANLIB) $(TARGETLIB); \
+++	  cp $(TARGETLIB) ../ ; \
++ 	  cd ..; \
++ 	else true; fi
++ 
