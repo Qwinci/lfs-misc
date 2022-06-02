@@ -1,24 +1,18 @@
-diff --git a/13.1.0/gentoo/07_all_libiberty-asprintf.patch b/13.1.0/gentoo/07_all_libiberty-asprintf.patch
-new file mode 100644
-index 0000000..1ed2ba3
---- /dev/null
-+++ b/13.1.0/gentoo/07_all_libiberty-asprintf.patch
-@@ -0,0 +1,18 @@
-+2008-07-25  Magnus Granberg  <zorry@ume.nu>
-+
-+	* include/libiberty.h (asprintf): Don't declare if defined as a macro
-+
-+--- a/include/libiberty.h
-++++ b/include/libiberty.h
-+@@ -652,8 +652,11 @@ extern void *bsearch_r (const void *, const void *,
-+ /* Like sprintf but provides a pointer to malloc'd storage, which must
-+    be freed by the caller.  */
-+ 
-++/* asprintf may be declared as a macro by glibc with __USE_FORTIFY_LEVEL.  */
-++#ifndef asprintf
-+ extern int asprintf (char **, const char *, ...) ATTRIBUTE_PRINTF_2;
-+ #endif
-++#endif
-+ 
-+ /* Like asprintf but allocates memory without fail. This works like
-+    xmalloc.  */
+2008-07-25  Magnus Granberg  <zorry@ume.nu>
+
+	* include/libiberty.h (asprintf): Don't declare if defined as a macro
+
+--- a/include/libiberty.h
++++ b/include/libiberty.h
+@@ -652,8 +652,11 @@ extern void *bsearch_r (const void *, const void *,
+ /* Like sprintf but provides a pointer to malloc'd storage, which must
+    be freed by the caller.  */
+ 
++/* asprintf may be declared as a macro by glibc with __USE_FORTIFY_LEVEL.  */
++#ifndef asprintf
+ extern int asprintf (char **, const char *, ...) ATTRIBUTE_PRINTF_2;
+ #endif
++#endif
+ 
+ /* Like asprintf but allocates memory without fail. This works like
+    xmalloc.  */
