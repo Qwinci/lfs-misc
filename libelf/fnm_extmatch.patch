@@ -18,7 +18,7 @@
  #include "libeu.h"
  #include "printversion.h"
  
-+if !defined(FNM_EXTMATCH)
++#if !defined(FNM_EXTMATCH)
 +#define FNM_EXTMATCH 0
 +#endif
 +
