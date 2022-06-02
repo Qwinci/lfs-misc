@@ -1,0 +1,13 @@
+--- a/strip.c	2022-04-25 20:56:39.000000000 +0000
++++ b/strip.c	2022-06-02 15:04:37.829435926 +0000
+@@ -46,6 +46,10 @@
+ #include <system.h>
+ #include <printversion.h>
+ 
++#if !defined(FNM_EXTMATCH)
++#define FNM_EXTMATCH 0
++#endif
++
+ typedef uint8_t GElf_Byte;
+ 
+ /* Name and version of program.  */
