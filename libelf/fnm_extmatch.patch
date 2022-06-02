@@ -11,3 +11,17 @@
  typedef uint8_t GElf_Byte;
  
  /* Name and version of program.  */
+
+--- a/src/elfcompress.c	2022-04-25 20:56:39.000000000 +0000
++++ b/src/elfcompress.c	2022-06-02 15:08:43.559777963 +0000
+@@ -37,6 +37,10 @@
+ #include "libeu.h"
+ #include "printversion.h"
+ 
++if !defined(FNM_EXTMATCH)
++#define FNM_EXTMATCH 0
++#endif
++
+ /* Name and version of program.  */
+ ARGP_PROGRAM_VERSION_HOOK_DEF = print_version;
+ 
