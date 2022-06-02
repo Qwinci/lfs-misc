@@ -9,6 +9,7 @@
 # define UTIL_LINUX_NAMESPACE_H
 
 # include <sched.h>
+#include <unistd.h>
 
 # ifndef CLONE_NEWNS
 #  define CLONE_NEWNS 0x00020000
